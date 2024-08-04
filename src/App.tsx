@@ -1,10 +1,12 @@
-import React from "react";
+import Header from "./components/Header";
+import InvoiceFrom from "./components/invoiceForm";
 
 function App() {
   return (
-    <div className="text-3xl font-bold underline flex justify-center">
-      Invoice Assessment Form
-    </div>
+    <>
+      <Header />
+      <InvoiceFrom />
+    </>
   );
 }
 

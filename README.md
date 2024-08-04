@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# Invoice Form Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an Invoice Form application built with React and TypeScript. It allows users to create, view, and reset invoices. The application communicates with a GraphQL API to save invoice data and displays real-time updates as the user fills out the form.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Invoice Form
+- **Form Layout:** The form is divided into sections for "Bill From," "Bill To," "Invoice Details," and "Items List," according to the provided Figma design.
+- **Form Validations:** All fields in the form are required and include validation logic to ensure that data is entered correctly.
+- **Default Date:** The Invoice Date is set to the current date by default.
+- **Price Calculation:** The price of a single item is calculated based on Quantity and Price inputs.
+- **Total Price Calculation:** The total price of all items is calculated after deducting a 10% tax.
+- **Invoice Terms:** The available invoice terms are NET_10_DAYS, NET_20_DAYS, and NET_30_DAYS.
 
-### `npm start`
+### Real-Time Data Display
+- As the user fills out the form, the right-hand side of the page displays the real-time invoice data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Reset Functionality
+- A Reset button is provided to clear all form fields and the real-time data display.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Save Functionality
+- Upon saving, the invoice data is sent to a GraphQL API using a mutation.
+- A toast message "Invoice created successfully!" is displayed upon successful creation.
+- After saving, the form is reset to its empty state.
 
-### `npm test`
+### Design & Responsiveness
+- The design is pixel-perfect according to the provided Figma design.
+- The form and preview panel layout are responsive and work on different screen sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technology Stack
+- **React JS**
+- **TypeScript**
+- **Tailwind CSS** for styling
+- **Apollo Client** for GraphQL API requests
 
-### `npm run build`
+## API Endpoint
+The application communicates with the following GraphQL API endpoint:
+    https://sse-frontend-assessment-api-823449bb66ac.herokuapp.com/graphql
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Node.js
+- npm or yarn
 
-### `npm run eject`
+### Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Abakar26/invoice-form-assessment.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd invoice-form
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+    or
+    ```bash
+    yarn install
+    ```
+4. Set your apiUrl in .env:
+    ```bash
+    REACT_APP_API_URL=your_api_url
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Running the Application
+To start the application, run:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
